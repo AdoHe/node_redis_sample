@@ -1,0 +1,25 @@
+{
+  "name": "node_redis_sample",
+  "version": "1.0.0",
+  "description": "implement job queue&job schedule with Node/Reids/Cron",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://AdoHe@github.com/AdoHe/node_redis_sample.git"
+  },
+  "keywords": [
+    "job",
+    "queue"
+  ],
+  "author": "Tonyhe <coolhzb@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdoHe/node_redis_sample/issues"
+  }
+}
