@@ -1,10 +1,16 @@
 var drifter = require('../controllers/drifter');
 
-module.exports = function (app) {
+module.exports = function (server) {
 
     /**
      * Get one drifter
      *
      */
-    app.get('/', drifter.getDrifter)
+    server.get('/', drifter.getDrifter);
+
+    /**
+     * Throw one drifter
+     *
+     */
+    server.post('/', drifter.throwDrifter);
 }
