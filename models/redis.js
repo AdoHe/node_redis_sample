@@ -39,3 +39,32 @@ exports.pick = function (info, callback) {
         });
     });
 }
+
+/**
+ * Throw a bottle to the ocean
+ *
+ *
+ */
+exports.throwBottle = function (bottle, callback) {
+    var type = {
+        male: 0,
+        female: 1
+    },
+    bottleId = Math.random().toString(16);
+    bottle.time = bottle.time || Date.now();
+
+    client.select(type[bottle.type], function () {
+
+        // Store the bottle
+        client.HMSET(bottleId, bottle, function (err, result) {
+            if (err) {
+                return callback({code: 0, msg: 'try later...'});
+            }
+
+            callback({code: 1, msg: result});
+
+            // Set the expire time
+            client.EXPIRE(bottleId, 100000);
+        });
+    });
+}
